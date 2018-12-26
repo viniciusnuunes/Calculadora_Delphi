@@ -19,8 +19,23 @@ object FormCalculadora: TFormCalculadora
   ParentBiDiMode = False
   OnCreate = FormCreate
   OnKeyDown = FormKeyDown
+  DesignSize = (
+    300
+    400)
   PixelsPerInch = 96
   TextHeight = 14
+  object btnApagar: TSpeedButton
+    Left = 116
+    Top = 270
+    Width = 45
+    Height = 45
+    Anchors = []
+    Caption = '<---'
+    Visible = False
+    OnClick = btnApagarClick
+    ExplicitLeft = 261
+    ExplicitTop = 398
+  end
   object gridPainel: TGridPanel
     Left = 0
     Top = 0
@@ -64,7 +79,7 @@ object FormCalculadora: TFormCalculadora
       end
       item
         Column = 3
-        Control = btnApagar
+        Control = btnSubtrair
         Row = 1
       end
       item
@@ -84,7 +99,7 @@ object FormCalculadora: TFormCalculadora
       end
       item
         Column = 3
-        Control = btnSubtrair
+        Control = btnSomar
         Row = 2
       end
       item
@@ -104,7 +119,7 @@ object FormCalculadora: TFormCalculadora
       end
       item
         Column = 3
-        Control = btnSomar
+        Control = btnPonto
         Row = 3
       end
       item
@@ -124,8 +139,9 @@ object FormCalculadora: TFormCalculadora
       end
       item
         Column = 3
-        Control = btnPonto
+        Control = btnEnter
         Row = 4
+        RowSpan = 2
       end
       item
         Column = 0
@@ -136,11 +152,6 @@ object FormCalculadora: TFormCalculadora
       item
         Column = 2
         Control = btnVirgula
-        Row = 5
-      end
-      item
-        Column = 3
-        Control = btnEnter
         Row = 5
       end>
     RowCollection = <
@@ -238,22 +249,24 @@ object FormCalculadora: TFormCalculadora
       ExplicitWidth = 45
       ExplicitHeight = 45
     end
-    object btnApagar: TSpeedButton
+    object btnSubtrair: TSpeedButton
       Left = 223
       Top = 71
       Width = 76
       Height = 65
       Align = alClient
-      Caption = #8592
+      Caption = '-'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
-      Font.Height = -24
-      Font.Name = 'Arial'
+      Font.Height = -16
+      Font.Name = 'Calibri'
       Font.Style = [fsBold]
       ParentFont = False
-      OnClick = btnApagarClick
-      ExplicitTop = 62
-      ExplicitHeight = 68
+      OnClick = btnSubtrairClick
+      ExplicitLeft = 187
+      ExplicitTop = 72
+      ExplicitWidth = 63
+      ExplicitHeight = 60
     end
     object btnSete: TSpeedButton
       Left = 1
@@ -312,24 +325,24 @@ object FormCalculadora: TFormCalculadora
       ExplicitWidth = 45
       ExplicitHeight = 45
     end
-    object btnSubtrair: TSpeedButton
+    object btnSomar: TSpeedButton
       Left = 223
       Top = 136
       Width = 76
       Height = 65
       Align = alClient
-      Caption = '-'
+      Caption = '+'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
       Font.Name = 'Calibri'
       Font.Style = [fsBold]
       ParentFont = False
-      OnClick = btnSubtrairClick
-      ExplicitLeft = 187
-      ExplicitTop = 72
-      ExplicitWidth = 63
-      ExplicitHeight = 60
+      OnClick = btnSomarClick
+      ExplicitLeft = 643
+      ExplicitTop = 507
+      ExplicitWidth = 45
+      ExplicitHeight = 45
     end
     object btnQuatro: TSpeedButton
       Left = 1
@@ -388,20 +401,19 @@ object FormCalculadora: TFormCalculadora
       ExplicitWidth = 45
       ExplicitHeight = 45
     end
-    object btnSomar: TSpeedButton
+    object btnPonto: TSpeedButton
       Left = 223
       Top = 201
       Width = 76
       Height = 65
       Align = alClient
-      Caption = '+'
+      Caption = '.'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
       Font.Name = 'Calibri'
       Font.Style = [fsBold]
       ParentFont = False
-      OnClick = btnSomarClick
       ExplicitLeft = 643
       ExplicitTop = 507
       ExplicitWidth = 45
@@ -464,23 +476,24 @@ object FormCalculadora: TFormCalculadora
       ExplicitWidth = 45
       ExplicitHeight = 45
     end
-    object btnPonto: TSpeedButton
+    object btnEnter: TSpeedButton
       Left = 223
       Top = 266
       Width = 76
-      Height = 65
+      Height = 133
       Align = alClient
-      Caption = '.'
+      Caption = 'Enter'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
       Font.Name = 'Calibri'
       Font.Style = [fsBold]
       ParentFont = False
-      ExplicitLeft = 643
-      ExplicitTop = 507
-      ExplicitWidth = 45
-      ExplicitHeight = 45
+      OnClick = btnEnterClick
+      ExplicitLeft = 254
+      ExplicitTop = 189
+      ExplicitWidth = 73
+      ExplicitHeight = 131
     end
     object btnZero: TSpeedButton
       Left = 1
@@ -519,25 +532,6 @@ object FormCalculadora: TFormCalculadora
       ExplicitTop = 507
       ExplicitWidth = 45
       ExplicitHeight = 45
-    end
-    object btnEnter: TSpeedButton
-      Left = 223
-      Top = 331
-      Width = 76
-      Height = 68
-      Align = alClient
-      Caption = '='
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -16
-      Font.Name = 'Calibri'
-      Font.Style = [fsBold]
-      ParentFont = False
-      OnClick = btnEnterClick
-      ExplicitLeft = 254
-      ExplicitTop = 189
-      ExplicitWidth = 73
-      ExplicitHeight = 131
     end
   end
 end

@@ -71,13 +71,24 @@ begin
 end;
 
 procedure TFormCalculadora.Apagar;
-var deletar : String;
+var
+  deletar : String;
 begin
-  deletar := edtVisor.Text;
-  delete(deletar, Length(deletar), 1);
-  edtVisor.Text := deletar;
-//  UltimoNumero := StrToFloat(edtVisor.Text);
-  Total := StrToFloat(edtVisor.Text);
+
+   try
+    deletar := edtVisor.Text;
+    delete(deletar, Length(deletar), 1);
+    edtVisor.Text := deletar;
+    Total := StrToFloat(edtVisor.Text);
+  Except
+//    if Length(deletar) = 0 then
+//    begin
+//      ShowMessage('Não há mais números para apagar');
+//    end;
+//    Exit;
+  end;
+
+  
 end;
 
 procedure TFormCalculadora.btnApagarClick(Sender: TObject);

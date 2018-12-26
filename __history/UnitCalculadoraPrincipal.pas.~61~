@@ -4,30 +4,31 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls;
 
 type
   TFormCalculadora = class(TForm)
-    edtVisor: TEdit;
-    btnLimpar: TSpeedButton;
-    btnDividir: TSpeedButton;
-    btnMultiplicar: TSpeedButton;
-    btnSubtrair: TSpeedButton;
-    btnSete: TSpeedButton;
-    btnOito: TSpeedButton;
-    btnNove: TSpeedButton;
-    btnSomar: TSpeedButton;
-    btnQuatro: TSpeedButton;
-    btnCinco: TSpeedButton;
-    btnSeis: TSpeedButton;
-    btnPonto: TSpeedButton;
-    btnUm: TSpeedButton;
-    btnDois: TSpeedButton;
-    btnTres: TSpeedButton;
-    btnEnter: TSpeedButton;
-    btnZero: TSpeedButton;
-    btnVirgula: TSpeedButton;
     btnApagar: TSpeedButton;
+    btnCinco: TSpeedButton;
+    btnDividir: TSpeedButton;
+    btnDois: TSpeedButton;
+    btnEnter: TSpeedButton;
+    btnLimpar: TSpeedButton;
+    btnMultiplicar: TSpeedButton;
+    btnNove: TSpeedButton;
+    btnOito: TSpeedButton;
+    btnPonto: TSpeedButton;
+    btnQuatro: TSpeedButton;
+    btnSeis: TSpeedButton;
+    btnSete: TSpeedButton;
+    btnSomar: TSpeedButton;
+    btnSubtrair: TSpeedButton;
+    btnTres: TSpeedButton;
+    btnUm: TSpeedButton;
+    btnVirgula: TSpeedButton;
+    btnZero: TSpeedButton;
+    edtVisor: TEdit;
+    gridPainel: TGridPanel;
     procedure btnSomarClick(Sender: TObject);
     procedure btnSubtrairClick(Sender: TObject);
     procedure btnMultiplicarClick(Sender: TObject);
@@ -73,7 +74,10 @@ procedure TFormCalculadora.Apagar;
 var deletar : String;
 begin
   deletar := edtVisor.Text;
-  delete(deletar, length(deletar) -1);
+  delete(deletar, Length(deletar), 1);
+  edtVisor.Text := deletar;
+//  UltimoNumero := StrToFloat(edtVisor.Text);
+  Total := StrToFloat(edtVisor.Text);
 end;
 
 procedure TFormCalculadora.btnApagarClick(Sender: TObject);
@@ -234,6 +238,8 @@ begin
   btnVirgula.Click;
   if Key = VK_DELETE then
   btnLimpar.click;
+  if Key = VK_BACK then
+  btnApagar.click;
 end;
 
 end.
