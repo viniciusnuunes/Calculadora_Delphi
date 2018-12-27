@@ -2,8 +2,8 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2018/12/05 11:46:26.000.847,=C:\Users\Administrador\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2018/12/05 11:47:37.000.902,C:\Users\Administrador\Documents\RAD Studio\Projects\Unit1.pas=C:\Users\Administrador\Documents\RAD Studio\Projects\Calculadora_Delphi_Nova\UnitCalculadoraPrincipal.pas</Transaction>
-    <Transaction>2018/12/05 11:47:37.000.902,C:\Users\Administrador\Documents\RAD Studio\Projects\Unit1.dfm=C:\Users\Administrador\Documents\RAD Studio\Projects\Calculadora_Delphi_Nova\UnitCalculadoraPrincipal.dfm</Transaction>
-    <Transaction>2018/12/05 11:47:42.000.710,C:\Users\Administrador\Documents\RAD Studio\Projects\Project1.dproj=C:\Users\Administrador\Documents\RAD Studio\Projects\Calculadora_Delphi_Nova\calculadora.dproj</Transaction>
+    <Transaction>2018/12/05 11:47:37.000.902,C:\Users\Administrador\Documents\RAD Studio\Projects\Calculadora_Delphi_Nova\UnitCalculadoraPrincipal.pas=C:\Users\Administrador\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2018/12/05 11:47:37.000.902,C:\Users\Administrador\Documents\RAD Studio\Projects\Calculadora_Delphi_Nova\UnitCalculadoraPrincipal.dfm=C:\Users\Administrador\Documents\RAD Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2018/12/05 11:47:42.000.710,C:\Users\Administrador\Documents\RAD Studio\Projects\Calculadora_Delphi_Nova\calculadora.dproj=C:\Users\Administrador\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
   </Transactions>
 </BorlandProject>

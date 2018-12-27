@@ -3,8 +3,8 @@ object FormCalculadora: TFormCalculadora
   Top = 0
   BiDiMode = bdLeftToRight
   Caption = 'Calculadora'
-  ClientHeight = 400
-  ClientWidth = 300
+  ClientHeight = 392
+  ClientWidth = 314
   Color = clBtnFace
   Constraints.MaxHeight = 600
   Constraints.MaxWidth = 500
@@ -24,8 +24,8 @@ object FormCalculadora: TFormCalculadora
   object gridPainel: TGridPanel
     Left = 0
     Top = 0
-    Width = 300
-    Height = 400
+    Width = 314
+    Height = 392
     Align = alClient
     ColumnCollection = <
       item
@@ -41,12 +41,6 @@ object FormCalculadora: TFormCalculadora
         Value = 25.000000000000000000
       end>
     ControlCollection = <
-      item
-        Column = 0
-        ColumnSpan = 4
-        Control = edtVisor
-        Row = 0
-      end
       item
         Column = 0
         Control = btnLimpar
@@ -142,50 +136,40 @@ object FormCalculadora: TFormCalculadora
         Column = 3
         Control = btnEnter
         Row = 5
+      end
+      item
+        Column = 0
+        ColumnSpan = 4
+        Control = edtVisor
+        Row = 0
       end>
     RowCollection = <
       item
-        Value = 17.763157894736840000
+        Value = 19.562419562419550000
       end
       item
-        Value = 16.447368421052630000
+        Value = 16.087516087516090000
       end
       item
-        Value = 16.447368421052630000
+        Value = 16.087516087516090000
       end
       item
-        Value = 16.447368421052630000
+        Value = 16.087516087516090000
       end
       item
-        Value = 16.447368421052630000
+        Value = 16.087516087516090000
       end
       item
-        Value = 16.447368421052630000
+        Value = 16.087516087516090000
       end>
     TabOrder = 0
-    object edtVisor: TEdit
-      Left = 1
-      Top = 1
-      Width = 298
-      Height = 70
-      Align = alClient
-      Alignment = taRightJustify
-      AutoSize = False
-      Enabled = False
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -53
-      Font.Name = 'Arial'
-      Font.Style = []
-      ParentFont = False
-      TabOrder = 0
-      Text = '123'
-    end
+    ExplicitWidth = 300
+    ExplicitHeight = 400
     object btnLimpar: TSpeedButton
       Left = 1
-      Top = 71
-      Width = 74
-      Height = 65
+      Top = 77
+      Width = 78
+      Height = 62
       Align = alClient
       Caption = 'C'
       Font.Charset = DEFAULT_CHARSET
@@ -201,10 +185,10 @@ object FormCalculadora: TFormCalculadora
       ExplicitHeight = 45
     end
     object btnDividir: TSpeedButton
-      Left = 75
-      Top = 71
-      Width = 74
-      Height = 65
+      Left = 79
+      Top = 77
+      Width = 78
+      Height = 62
       Align = alClient
       Caption = '/'
       Font.Charset = DEFAULT_CHARSET
@@ -220,10 +204,10 @@ object FormCalculadora: TFormCalculadora
       ExplicitHeight = 45
     end
     object btnMultiplicar: TSpeedButton
-      Left = 149
-      Top = 71
-      Width = 74
-      Height = 65
+      Left = 157
+      Top = 77
+      Width = 78
+      Height = 62
       Align = alClient
       Caption = '*'
       Font.Charset = DEFAULT_CHARSET
@@ -239,10 +223,10 @@ object FormCalculadora: TFormCalculadora
       ExplicitHeight = 45
     end
     object btnApagar: TSpeedButton
-      Left = 223
-      Top = 71
-      Width = 76
-      Height = 65
+      Left = 235
+      Top = 77
+      Width = 78
+      Height = 62
       Align = alClient
       Caption = #8592
       Font.Charset = DEFAULT_CHARSET
@@ -252,14 +236,16 @@ object FormCalculadora: TFormCalculadora
       Font.Style = [fsBold]
       ParentFont = False
       OnClick = btnApagarClick
+      ExplicitLeft = 223
       ExplicitTop = 62
+      ExplicitWidth = 76
       ExplicitHeight = 68
     end
     object btnSete: TSpeedButton
       Left = 1
-      Top = 136
-      Width = 74
-      Height = 65
+      Top = 139
+      Width = 78
+      Height = 62
       Align = alClient
       Caption = '7'
       Font.Charset = DEFAULT_CHARSET
@@ -275,10 +261,10 @@ object FormCalculadora: TFormCalculadora
       ExplicitHeight = 45
     end
     object btnOito: TSpeedButton
-      Left = 75
-      Top = 136
-      Width = 74
-      Height = 65
+      Left = 79
+      Top = 139
+      Width = 78
+      Height = 62
       Align = alClient
       Caption = '8'
       Font.Charset = DEFAULT_CHARSET
@@ -294,10 +280,10 @@ object FormCalculadora: TFormCalculadora
       ExplicitHeight = 45
     end
     object btnNove: TSpeedButton
-      Left = 149
-      Top = 136
-      Width = 74
-      Height = 65
+      Left = 157
+      Top = 139
+      Width = 78
+      Height = 62
       Align = alClient
       Caption = '9'
       Font.Charset = DEFAULT_CHARSET
@@ -313,10 +299,10 @@ object FormCalculadora: TFormCalculadora
       ExplicitHeight = 45
     end
     object btnSubtrair: TSpeedButton
-      Left = 223
-      Top = 136
-      Width = 76
-      Height = 65
+      Left = 235
+      Top = 139
+      Width = 78
+      Height = 62
       Align = alClient
       Caption = '-'
       Font.Charset = DEFAULT_CHARSET
@@ -334,8 +320,8 @@ object FormCalculadora: TFormCalculadora
     object btnQuatro: TSpeedButton
       Left = 1
       Top = 201
-      Width = 74
-      Height = 65
+      Width = 78
+      Height = 62
       Align = alClient
       Caption = '4'
       Font.Charset = DEFAULT_CHARSET
@@ -351,10 +337,10 @@ object FormCalculadora: TFormCalculadora
       ExplicitHeight = 45
     end
     object btnCinco: TSpeedButton
-      Left = 75
+      Left = 79
       Top = 201
-      Width = 74
-      Height = 65
+      Width = 78
+      Height = 62
       Align = alClient
       Caption = '5'
       Font.Charset = DEFAULT_CHARSET
@@ -370,10 +356,10 @@ object FormCalculadora: TFormCalculadora
       ExplicitHeight = 45
     end
     object btnSeis: TSpeedButton
-      Left = 149
+      Left = 157
       Top = 201
-      Width = 74
-      Height = 65
+      Width = 78
+      Height = 62
       Align = alClient
       Caption = '6'
       Font.Charset = DEFAULT_CHARSET
@@ -389,10 +375,10 @@ object FormCalculadora: TFormCalculadora
       ExplicitHeight = 45
     end
     object btnSomar: TSpeedButton
-      Left = 223
+      Left = 235
       Top = 201
-      Width = 76
-      Height = 65
+      Width = 78
+      Height = 62
       Align = alClient
       Caption = '+'
       Font.Charset = DEFAULT_CHARSET
@@ -409,9 +395,9 @@ object FormCalculadora: TFormCalculadora
     end
     object btnUm: TSpeedButton
       Left = 1
-      Top = 266
-      Width = 74
-      Height = 65
+      Top = 263
+      Width = 78
+      Height = 62
       Align = alClient
       Caption = '1'
       Font.Charset = DEFAULT_CHARSET
@@ -421,16 +407,16 @@ object FormCalculadora: TFormCalculadora
       Font.Style = [fsBold]
       ParentFont = False
       OnClick = ClicarNumeros
-      ExplicitLeft = 328
-      ExplicitTop = 507
-      ExplicitWidth = 45
-      ExplicitHeight = 45
+      ExplicitLeft = -5
+      ExplicitTop = 209
+      ExplicitWidth = 74
+      ExplicitHeight = 49
     end
     object btnDois: TSpeedButton
-      Left = 75
-      Top = 266
-      Width = 74
-      Height = 65
+      Left = 79
+      Top = 263
+      Width = 78
+      Height = 62
       Align = alClient
       Caption = '2'
       Font.Charset = DEFAULT_CHARSET
@@ -446,10 +432,10 @@ object FormCalculadora: TFormCalculadora
       ExplicitHeight = 45
     end
     object btnTres: TSpeedButton
-      Left = 149
-      Top = 266
-      Width = 74
-      Height = 65
+      Left = 157
+      Top = 263
+      Width = 78
+      Height = 62
       Align = alClient
       Caption = '3'
       Font.Charset = DEFAULT_CHARSET
@@ -465,10 +451,10 @@ object FormCalculadora: TFormCalculadora
       ExplicitHeight = 45
     end
     object btnPonto: TSpeedButton
-      Left = 223
-      Top = 266
-      Width = 76
-      Height = 65
+      Left = 235
+      Top = 263
+      Width = 78
+      Height = 62
       Align = alClient
       Caption = '.'
       Font.Charset = DEFAULT_CHARSET
@@ -484,9 +470,9 @@ object FormCalculadora: TFormCalculadora
     end
     object btnZero: TSpeedButton
       Left = 1
-      Top = 331
-      Width = 148
-      Height = 68
+      Top = 325
+      Width = 156
+      Height = 66
       Align = alClient
       Caption = '0'
       Font.Charset = DEFAULT_CHARSET
@@ -502,10 +488,10 @@ object FormCalculadora: TFormCalculadora
       ExplicitHeight = 45
     end
     object btnVirgula: TSpeedButton
-      Left = 149
-      Top = 331
-      Width = 74
-      Height = 68
+      Left = 157
+      Top = 325
+      Width = 78
+      Height = 66
       Align = alClient
       Caption = ','
       Font.Charset = DEFAULT_CHARSET
@@ -521,10 +507,10 @@ object FormCalculadora: TFormCalculadora
       ExplicitHeight = 45
     end
     object btnEnter: TSpeedButton
-      Left = 223
-      Top = 331
-      Width = 76
-      Height = 68
+      Left = 235
+      Top = 325
+      Width = 78
+      Height = 66
       Align = alClient
       Caption = '='
       Font.Charset = DEFAULT_CHARSET
@@ -538,6 +524,31 @@ object FormCalculadora: TFormCalculadora
       ExplicitTop = 189
       ExplicitWidth = 73
       ExplicitHeight = 131
+    end
+    object edtVisor: TcxCurrencyEdit
+      Left = 1
+      Top = 1
+      Align = alClient
+      EditValue = 1230000c
+      Enabled = False
+      ParentFont = False
+      Properties.Alignment.Horz = taRightJustify
+      Properties.Alignment.Vert = taVCenter
+      Properties.DisplayFormat = '#,###.##'
+      Properties.EditFormat = '#,###.##'
+      Properties.UseDisplayFormatWhenEditing = True
+      Properties.UseLeftAlignmentOnEditing = False
+      Properties.ValidateOnEnter = False
+      Style.Font.Charset = DEFAULT_CHARSET
+      Style.Font.Color = clWindowText
+      Style.Font.Height = -33
+      Style.Font.Name = 'Tahoma'
+      Style.Font.Style = []
+      Style.IsFontAssigned = True
+      TabOrder = 0
+      ExplicitTop = 320
+      ExplicitWidth = 298
+      Width = 312
     end
   end
 end

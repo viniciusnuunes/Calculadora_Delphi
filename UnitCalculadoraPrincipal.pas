@@ -4,7 +4,19 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls,
+  cxGraphics, cxControls, cxLookAndFeels, cxLookAndFeelPainters, cxContainer,
+  cxEdit, dxSkinsCore, dxSkinBlack, dxSkinBlue, dxSkinBlueprint, dxSkinCaramel,
+  dxSkinCoffee, dxSkinDarkRoom, dxSkinDarkSide, dxSkinDevExpressDarkStyle,
+  dxSkinDevExpressStyle, dxSkinFoggy, dxSkinGlassOceans, dxSkinHighContrast,
+  dxSkiniMaginary, dxSkinLilian, dxSkinLiquidSky, dxSkinLondonLiquidSky,
+  dxSkinMcSkin, dxSkinMoneyTwins, dxSkinOffice2007Black, dxSkinOffice2007Blue,
+  dxSkinOffice2007Green, dxSkinOffice2007Pink, dxSkinOffice2007Silver,
+  dxSkinOffice2010Black, dxSkinOffice2010Blue, dxSkinOffice2010Silver,
+  dxSkinPumpkin, dxSkinSeven, dxSkinSevenClassic, dxSkinSharp, dxSkinSharpPlus,
+  dxSkinSilver, dxSkinSpringTime, dxSkinStardust, dxSkinSummer2008,
+  dxSkinTheAsphaltWorld, dxSkinsDefaultPainters, dxSkinValentine, dxSkinVS2010,
+  dxSkinWhiteprint, dxSkinXmas2008Blue, cxTextEdit, cxCurrencyEdit;
 
 type
   TFormCalculadora = class(TForm)
@@ -27,8 +39,8 @@ type
     btnUm: TSpeedButton;
     btnVirgula: TSpeedButton;
     btnZero: TSpeedButton;
-    edtVisor: TEdit;
     gridPainel: TGridPanel;
+    edtVisor: TcxCurrencyEdit;
     procedure btnSomarClick(Sender: TObject);
     procedure btnSubtrairClick(Sender: TObject);
     procedure btnMultiplicarClick(Sender: TObject);
@@ -59,6 +71,7 @@ var
 implementation
 
 {$R *.dfm}
+
 procedure TFormCalculadora.btnEnterClick(Sender: TObject);
 begin
   Calcular;
@@ -76,14 +89,18 @@ var
 begin
 
    try
+   if Trim(edtVisor.Text) <> '' then
+   begin
     deletar := edtVisor.Text;
     delete(deletar, Length(deletar), 1);
     edtVisor.Text := deletar;
-    Total := StrToFloat(edtVisor.Text);
+    Total := StrToFloat(edtVisor.Text);   
+   end else
+      ShowMessage('Não há mais números para apagar');   
   Except
 //    if Length(deletar) = 0 then
 //    begin
-//      ShowMessage('Não há mais números para apagar');
+
 //    end;
 //    Exit;
   end;
@@ -98,23 +115,37 @@ end;
 
 procedure TFormCalculadora.btnDividirClick(Sender: TObject);
 begin
-  UltimoNumero := StrToFloat(edtVisor.Text);
-  Calcular;
-  Operacao := '/';
+  try
+    UltimoNumero := StrToFloat(edtVisor.Text);
+    Calcular;
+    Operacao := '/';  
+  Except
+
+  end;
+
 end;
 
 procedure TFormCalculadora.btnMultiplicarClick(Sender: TObject);
 begin
-  UltimoNumero := StrToFloat(edtVisor.Text);
-  Calcular;
-  Operacao := '*';
+  try
+    UltimoNumero := StrToFloat(edtVisor.Text);
+    Calcular;
+    Operacao := '*';
+  Except
+
+  end;
 end;
 
 procedure TFormCalculadora.btnSomarClick(Sender: TObject);
 begin
-  UltimoNumero := StrToFloat(edtVisor.Text);
-  Calcular;
-  Operacao := '+';
+  try
+    UltimoNumero := StrToFloat(edtVisor.Text);
+    Calcular;
+    Operacao := '+';  
+  Except
+
+  end;
+
 
 //  if StrToFloat(edtVisor.Text) <> Total then
 //  begin
@@ -130,9 +161,14 @@ end;
 
 procedure TFormCalculadora.btnSubtrairClick(Sender: TObject);
 begin
-  UltimoNumero := StrToFloat(edtVisor.Text);
-  Calcular;
-  Operacao := '-';
+  try
+    UltimoNumero := StrToFloat(edtVisor.Text);
+    Calcular;
+    Operacao := '-';  
+  Except
+
+  end;
+    
 end;
 
 procedure TFormCalculadora.btnVirgulaClick(Sender: TObject);
@@ -175,8 +211,7 @@ begin
       if StrToFloat(edtVisor.Text) <> 0 then
       begin
         Total := Total / StrToFloat(edtVisor.Text);
-      end
-      else
+      end else
       begin
        ShowMessage('Divisão por zero');
         edtVisor.Text := 'ERRO';
@@ -196,7 +231,10 @@ begin
   else
     edtVisor.Text := edtVisor.Text + TButton(Sender).Caption;
 
+
+
   UltimoNumero := StrToFloat(edtVisor.Text);
+//  edtVisor.Text := FormatFloat('##,##0.00', StrToFloat(edtVisor.Text));
 end;
 
 procedure TFormCalculadora.FormCreate(Sender: TObject);
@@ -216,41 +254,41 @@ procedure TFormCalculadora.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
   if Key = VK_NUMPAD1 then
-  btnUm.Click;
+    btnUm.Click;
   if Key = VK_NUMPAD2 then
-  btnDois.click;
+    btnDois.click;
   if Key = VK_NUMPAD3 then
-  btnTres.click;
+    btnTres.click;
   if Key = VK_NUMPAD4 then
-  btnQuatro.click;
+    btnQuatro.click;
   if Key = VK_NUMPAD5 then
-  btnCinco.click;
+    btnCinco.click;
   if Key = VK_NUMPAD6 then
-  btnSeis.click;
+    btnSeis.click;
   if Key = VK_NUMPAD7 then
-  btnSete.click;
+    btnSete.click;
   if Key = VK_NUMPAD8 then
-  btnOito.click;
+    btnOito.click;
   if Key = VK_NUMPAD9 then
-  btnNove.click;
+    btnNove.click;
   if Key = VK_NUMPAD0 then
-  btnZero.click;
+    btnZero.click;
   if Key = VK_ADD then
-  btnSomar.click;
+    btnSomar.click;
   if Key = VK_SUBTRACT then
-  btnSubtrair.click;
+    btnSubtrair.click;
   if Key = VK_MULTIPLY then
-  btnMultiplicar.click;
+    btnMultiplicar.click;
   if Key = VK_DIVIDE then
-  btnDividir.click;
+    btnDividir.click;
   if Key = VK_RETURN then
-  btnEnter.click;
+    btnEnter.click;
   if Key = VK_DECIMAL then
-  btnVirgula.Click;
+    btnVirgula.Click;
   if Key = VK_DELETE then
-  btnLimpar.click;
+    btnLimpar.click;
   if Key = VK_BACK then
-  btnApagar.click;
+    btnApagar.click;
 end;
 
 end.
